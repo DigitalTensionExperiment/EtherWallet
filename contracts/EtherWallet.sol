@@ -39,7 +39,8 @@ contract EtherWallet {
             // Emit an event: Deposit
             Deposit(msg.sender, msg.value);
         } else {
-            throw;
+            //throw;
+            revert();
         }
     }
 
@@ -54,7 +55,8 @@ contract EtherWallet {
                 // then send the amount to the receiver
                 if(!receiver.send(amount)) {
                     // or throw an exception
-                    throw;
+                    //throw;
+                    revert();
                 }
                 // then make sure everything is rolled back
                 // emit an event
