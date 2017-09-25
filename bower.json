@@ -1,0 +1,21 @@
+{
+  "name": "EtherWallet",
+  "homepage": "https://github.com/DigitalTensionExperiment/EtherWallet",
+  "authors": [
+    "DigitalTensionExperiment"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.6.6"
+  }
+}
