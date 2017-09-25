@@ -9,27 +9,27 @@ contract('EtherWallet', function(accounts) {
         var myContract = EtherWallet.deployed();
         // account[0] should be the account who deployed the contract
         return myContract.isAllowedToSend.call(accounts[0]).then(function(isAllowed) {
-            assert.equal(isAllowed, true, 'the owner should have been allowed to send funds');
+            assert.equals(isAllowed, true, 'the owner should have been allowed to send funds');
         })
         // isAllowedToSend() is the SimpleWallet function being called and tested here
     });
 
-    // it('the other account should not be allowed to send funds', function () {
-    //     var myContract = SimpleWallet.deployed();
-    //     return myContract.isAllowedToSend.call(accounts[1]).then(function(isAllowed) {
-    //         assert.equal(isAllowed, false, 'the owner should have been allowed to send funds');
-    //     })
-    // });
-    //
+    it('the other account should not be allowed to send funds', function () {
+        var myContract = EtherWallet.deployed();
+        return myContract.isAllowedToSend.call(accounts[1]).then(function(isAllowed) {
+            assert.equals(isAllowed, false, 'the owner should have been allowed to send funds');
+        })
+    });
+
     // it('adding accounts to the allowed list', function () {
-    //     var myContract = SimpleWallet.deployed();
+    //     var myContract = EtherWallet.deployed();
     //     return myContract.isAllowedToSend.call(accounts[1]).then(function(isAllowed) {
     //         assert.equal(isAllowed, false, 'the owner should have been allowed to send funds');
     //     })
     // });
     //
     // it('should check Deposit Events', function (done) {
-    //     var myContract = SimpleWallet.deployed();
+    //     var myContract = EtherWallet.deployed();
     //     var event = meta.allEvents();
     //
     //     event.watch(function (error, result) {
