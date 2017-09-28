@@ -62,6 +62,8 @@ contract EtherWallet {
                 // emit an event
                 Withdrawal(msg.sender, amount, receiver);
                 // and then return new balance
+                // console.log(isAllowedToSendFundsMapping[msg.sender]);
+                //console.log(isAllowedToSendFundsMapping[msg.sender]);
                 isAllowedToSendFundsMapping[msg.sender].amount_sends++;
                 isAllowedToSendFundsMapping[msg.sender].withdrawals[isAllowedToSendFundsMapping[msg.sender].amount_sends].to = receiver;
                 isAllowedToSendFundsMapping[msg.sender].withdrawals[isAllowedToSendFundsMapping[msg.sender].amount_sends].amount = amount;
